@@ -12,4 +12,4 @@ clean:
 	-rm $(BPM_TARGETNAME)
 
 pulsesensor_demo:
-	$(CC) $(FLAGS) PulseSensor_Timer.c $(DEMO_TARGETNAME)
+	$(CC) $(FLAGS) PulseSensor_timer.c $(DEMO_TARGETNAME)
