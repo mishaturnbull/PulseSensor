@@ -2,8 +2,8 @@
 
 CC = gcc
 FLAGS = -Wall -Wextra -lwiringPi -g
-DEMO_TARGETNAME = pulseTimer
-BPM_TARGETNAME = bpmMonitor
+DEMO_TARGETNAME = pulseTimer.x
+BPM_TARGETNAME = bpmMonitor.x
 
 main: clean pulsesensor_demo
 
@@ -12,4 +12,4 @@ clean:
 	-rm $(BPM_TARGETNAME)
 
 pulsesensor_demo:
-	$(CC) $(CFLAGS) PulseSensor_Timer.c $(DEMO_TARGETNAME)
+	$(CC) $(FLAGS) PulseSensor_Timer.c $(DEMO_TARGETNAME)
