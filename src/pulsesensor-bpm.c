@@ -80,7 +80,7 @@ void initPulseSensorVariables(void) {
   thresh = 550;  // slightly above trough
   amp = 100;  // beat amplitude 1/10 of input range
   firstBeat = 1;  // looking for first beat?
-  secondbeat = 0;  // looking for second beat?
+  secondBeat = 0;  // looking for second beat?
   lastTime = micros();
   timeOutStart = lastTime;
 }
@@ -112,9 +112,6 @@ int main(int argc, char *argv[]) {
       ssipcBPM = fopen(SSIPC_BPM_FILE, "w");
       fprintf(ssipcBPM, "%d", BPM);
       fclose(ssipcBPM);
-
-      // record BPM in ssipc
-      fprintf()
     }
 
     if ((micros() - timeOutStart) > TIME_OUT) {
@@ -129,7 +126,7 @@ void startTimer(int r, unsigned int u) {
   int latency = r;
   unsigned int micros = u;
 
-  signal(SIGALARM, getPulse);
+  signal(SIGALRM, getPulse);
   int err = ualarm(latency, micros);
   if (err == 0) {
     if (micros > 0) {
