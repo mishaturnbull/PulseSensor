@@ -6,7 +6,7 @@
  * Much of this is copied/adapted from PulseSensor_timer.c.
  */
 
-#include "pulsesensor-bom.h"
+#include "pulsesensor-bpm.h"
 
 // VARIABLES USED TO DETERMINE SAMPLE JITTER & TIME OUT
 volatile unsigned int eventCounter, thisTime, lastTime, elapsedTime, jitter;
