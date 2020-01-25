@@ -56,7 +56,7 @@ void fatal(int show_usage, char *fmt, ...) {
   }
 
   fflush(stderr);
-  pritnf("\nKilling timer us7cv1\n");
+  printf("\nKilling timer us7cv1\n");
   startTimer(OPT_R, 0);
   fprintf(data, "#%s", fmt);
   fclose(data);
