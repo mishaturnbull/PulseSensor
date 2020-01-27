@@ -86,7 +86,6 @@ int main(int argc, char *argv[]) {
   time_t now = time(NULL);
   timenow = gmtime(&now);
   strftime(filename, sizeof(filename), LOG_FILE, timenow);
-  data = fopen(filename, "w+");
   fprintf(data,"#Running with %d latency at %duS sample rate\n",OPT_R,OPT_U);
   fprintf(data,"#sampleCount\tSignal\tBPM\tIBI\tjitter\n");
 
@@ -102,8 +101,10 @@ int main(int argc, char *argv[]) {
       sampleFlag = 0;
       timeOutStart = micros();
       // record data in file
+      data = fopen(filename, "w+");
       fprintf(data, "%d\t%d\t%d\t%d\t%d\t%d\n",
         sampleCounter, Signal, IBI, BPM, jitter, duration);
+      fclose(data);
 
       ssipcBPM = fopen(SSIPC_BPM_FILE, "w");
       fprintf(ssipcBPM, "%d", BPM);

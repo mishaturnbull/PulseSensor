@@ -37,7 +37,7 @@
 #define PULSE_DATA 3    // SEND DATA PACKET TO FIFO
 #define PULSE_CONNECT 9 // CONNECT TO OTHER END OF PIPE
 
-#define LOG_FILE "/home/pi/Documents/PulseSensor/PULSE_DATA_%Y-%m-%d_%H:%M:%S.dat"
+#define LOG_FILE "/var/ssipc/pilot/heartDataLog.txt"
 #define SSIPC_BPM_FILE "/var/ssipc/pilot/heartBPM.txt"
 
 void getPulse(int sig_num);
